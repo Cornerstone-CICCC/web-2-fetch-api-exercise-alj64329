@@ -11,12 +11,13 @@ async function getData(url){
 
 function writeData(arr){
     const container = document.querySelector('.container')
+    const btn = document.querySelector('.btn-update')
 
     const update_date = new Date(arr.current.time)
     const temp = arr.current.temperature_2m
 
     container.innerHTML = `
-    <h2>My Weather</h2>
+    <h2>Today's Weather</h2>
     <h3 class="temperature ${temp>20? 'hot': temp<10?'cool':''}">
     ${temp} <span class="temp-unit">${arr.current_units.temperature_2m}<span>
     </h3>
@@ -24,6 +25,15 @@ function writeData(arr){
     <h3 class="location">${arr.timezone}</h3>
     <h3 class="updated-date">Last updated: ${update_date.toLocaleString()}</h3>
     `
+
+    // Night mode if is_day is 0
+    if(arr.current.is_day===0){
+        document.querySelector("body").style.backgroundColor ="black"
+        container.style.color ="white"
+        container.querySelector('span').style.color = "white"
+        btn.classList.add("night")
+    }
+
 }
 
 function updateDate(arr){

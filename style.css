@@ -18,6 +18,7 @@ body{
     gap: 2rem;
 }
 
+
 .container{
     display: flex;
     flex-direction: column;
@@ -56,4 +57,14 @@ span.temp-unit{
     font-size: 20px;
     border-radius: 5px;
     border: solid 4px black;
+}
+
+.btn-update:hover{
+    cursor: pointer;
+}
+
+/* Night mode */
+.btn-update.night{
+    color: white;
+    border: double 3px white;
 }
