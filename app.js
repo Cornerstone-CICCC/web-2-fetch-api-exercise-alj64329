@@ -16,7 +16,7 @@ function writeData(arr){
     const temp = arr.current.temperature_2m
 
     container.innerHTML = `
-    <h2>My Weather</h2>
+    <h2>Today's Weather</h2>
     <h3 class="temperature ${temp>20? 'hot': temp<10?'cool':''}">
     ${temp} <span class="temp-unit">${arr.current_units.temperature_2m}<span>
     </h3>
@@ -26,20 +26,7 @@ function writeData(arr){
     `
 }
 
-function updateDate(arr){
-    const container = document.querySelector('.container')
-    container.innerHTML= 'Loading...'
-
-    writeData(arr)
-}
-
 document.addEventListener('DOMContentLoaded', async function (){
     const data = await getData("https://api.open-meteo.com/v1/forecast?latitude=49.2497&longitude=-123.1193&current=temperature_2m,is_day,rain,showers,wind_speed_10m&timezone=auto&forecast_days=1")
     writeData(data)
 })
-
-document.querySelector('.btn-update').addEventListener('click', async function(){
-    const data = await getData("https://api.open-meteo.com/v1/forecast?latitude=49.2497&longitude=-123.1193&current=temperature_2m,is_day,rain,showers,wind_speed_10m&timezone=auto&forecast_days=1")
-    updateDate(data)
-})
-
