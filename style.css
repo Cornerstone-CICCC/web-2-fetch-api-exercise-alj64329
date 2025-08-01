@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    font-family: "Knewave",systme-ui;
+}
+.main-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-size: 40px;
+}
+
+h3{
+    padding: 0.5rem;
+    font-size: 28px;
+}
+
+h3.temperature{
+    font-size: 50px;  
+}
+
+span.temp-unit{
+    color: black;
+}
+
+.hot{
+    color: red;
+}
+
+.cool{
+    color: blue;
+}
+
+.btn-update{
+    background-color: transparent;
+    padding: 1rem 2rem;
+    font-family: "Knewave",systme-ui;
+    font-size: 20px;
+    border-radius: 5px;
+    border: solid 4px black;
+}
+
+.btn-update:hover{
+    cursor: pointer;
+}
+
+/* Night mode */
+.btn-update.night{
+    color: white;
+    border: double 3px white;
+}
